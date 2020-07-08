@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Honeypot Example</title>
+        <style>
+            /* Required style */
+            .phonyoney {
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 0;
+                width: 0;
+                z-index: -1;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="contact-form">
+            <!-- Real fields -->
+            <label for="nameski">Your Name</label>
+            <input
+                type="text"
+                id="nameski"
+                name="nameski"
+                placeholder="Name"
+                required
+                maxlength="100"
+            />
+            <label for="emailski">Your E-mail</label>
+            <input
+                type="text"
+                id="emailski"
+                name="emailski"
+                placeholder="Email"
+                required
+            />
+            <!-- Honeypot 🍯 for bot 🤖 -->
+            <label class="phonyoney" for="name"></label>
+            <input
+                class="phonyoney"
+                autocomplete="off"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+            />
+            <label class="phonyoney" for="email"></label>
+            <input
+                class="phonyoney"
+                autocomplete="off"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+            />
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
